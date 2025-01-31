@@ -1,2 +1,3 @@
-export * from "./admin_sidebar";
-export * from "./loader_profile";
+export * from "./admin-sidebar";
+export * from "./loader-profile";
+export * from "./confetti"

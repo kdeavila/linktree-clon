@@ -1,11 +1,11 @@
 "use client"
 import { TreePalm } from "lucide-react";
-import { LinkProfile } from "./components";
+import { HandlerSteps, LinkProfile } from "./components";
 import { useUser } from "@clerk/nextjs";
 import { Link, User } from "@prisma/client";
 import { useEffect, useState } from "react";
 import { LoaderProfile } from "@/components/shared";
-import { Button } from "@/components/ui/button";
+import { StepConfigUserProvider } from "@/contexts";
 
 export default function HomeLayout({ children }: { children: React.ReactNode }) {
     const { user } = useUser();
@@ -36,12 +36,9 @@ export default function HomeLayout({ children }: { children: React.ReactNode }) 
 
     if (isFirstVisit) {
         return (
-            <article className="flex flex-col items-center justify-center py-64 text-center p-6">
-                <h1 className="text-2xl font-bold">Welcome to Linktree Clone! 🎉</h1>
-                <p className="my-4 max-w-xl text-balance">
-                    We are excited to have you here. Customize your profile and share your links with the world.
-                </p>
-            </article >
+            <StepConfigUserProvider>
+                <HandlerSteps onReload={() => setReload(true)} />
+            </StepConfigUserProvider>
         );
     }
 
