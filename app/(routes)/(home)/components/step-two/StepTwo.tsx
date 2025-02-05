@@ -1,9 +1,9 @@
 import { Button } from "@/components/ui/button"
 import { useStepConfig } from "@/hooks/use-step-config"
-import { StepTwoData } from "./StepTwo.data"
 import Image from "next/image"
 import { useState } from "react"
 import { ArrowLeft } from "lucide-react"
+import { LinksSocialNetwork } from "@/data/links-social-network"
 
 
 export const StepTwo = () => {
@@ -25,7 +25,7 @@ export const StepTwo = () => {
     const handleContinue = () => {
         setInfoUser((prevInfoUser) => ({
             ...prevInfoUser,
-            platforms: StepTwoData.filter(({ name }) => selectedPlatforms.includes(name))
+            platforms: LinksSocialNetwork.filter(({ name }) => selectedPlatforms.includes(name))
         }))
 
         nextStep();
@@ -37,7 +37,7 @@ export const StepTwo = () => {
             <p className="textt-sm text-neutral-600">Pick the ones your are on.</p>
 
             <div className="grid grid-cols-2 gap-x-8 gap-y-4 mt-4 sm:grid-cols-3">
-                {StepTwoData.map(({ name, icon }) => {
+                {LinksSocialNetwork.map(({ name, icon }) => {
                     return (
                         <div className={`flex flex-col items-center gap-2 rounded-md py-4 border cursor-pointer ${selectedPlatforms.includes(name) ? "bg-neutral-100 border-neutral-400" : ""}`} key={name} onClick={() => handleSelectPlataform(name)}>
                             <Image src={icon} alt={`${name} icon`} className="size-8" width={48} height={48} />

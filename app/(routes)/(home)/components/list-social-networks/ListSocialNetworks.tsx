@@ -1,0 +1,36 @@
+import Image from "next/image";
+import { ListSocialNetworksProps } from "./ListSocialNetworks.types";
+import { ActionsSocialNetwork } from "./actions-social-network/ActionsSocialNetwork";
+
+
+export const ListSocialNetworks = (props: ListSocialNetworksProps) => {
+    const { links, onReload } = props;
+
+    return (
+        <div className="grid grid-cols-1 gap-4 mt-8">
+            {links.map((link) => {
+                return (
+                    <div key={link.id}
+                        className="bg-neutral-50 rounded-md p-4 flex gap-4 items-center justify-between border border-neutral-300">
+                        <div className="flex gap-2 items-center">
+                            <Image
+                                src={link.icon || ""}
+                                alt="Icono de red social"
+                                height={72}
+                                width={72}
+                                className="size-10"
+                            />
+
+                            <div className="flex flex-col">
+                                <span className="font-semibold text-sm">{link.name}</span>
+                                <span className="font-semibold text-sm text-neutral-600">{link.link}</span>
+                            </div>
+                        </div>
+
+                        <ActionsSocialNetwork link={link} onReload={onReload} />
+                    </div>
+                );
+            })}
+        </div>
+    )
+}   

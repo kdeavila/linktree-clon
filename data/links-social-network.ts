@@ -1,4 +1,4 @@
-export const StepTwoData = [
+export const LinksSocialNetwork = [
     {
         icon: "https://yu88eqe5p0.ufs.sh/f/Dk6Z3495qeoEXAomkVBD9deZNI2UbXlJC1rzxVYHfL73MqPB",
         name: "Instagram",
@@ -15,8 +15,8 @@ export const StepTwoData = [
         link: "",
     },
     {
-        icon: "https://yu88eqe5p0.ufs.sh/f/Dk6Z3495qeoEZFWo4kzJiHs02WBYbTS4mlwAyaPVnvEkKRu1",
-        name: "X",
+        icon: "https://yu88eqe5p0.ufs.sh/f/Dk6Z3495qeoEG5WaDP4aO1lzXWtKEeJLbBTqdIHojp7VfsYg",
+        name: "Twitter",
         link: "",
     },
     {
