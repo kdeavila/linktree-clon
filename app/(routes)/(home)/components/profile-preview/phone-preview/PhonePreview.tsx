@@ -6,7 +6,7 @@ export const PhonePreview = () => {
     const { user } = useUserInfo();
 
     return (
-        <div className="my-4 mx-auto">
+        <div className="mt-4 mx-auto">
             <div className="relative rounded-[40px] w-full max-w-[364px] aspect-[9/16] border-[10px] border-neutral-950 bg-neutral-950 overflow-hidden shadow-2xl">
                 <div className="absolute inset-0">
                     {user?.backgroundImage ? (
@@ -22,7 +22,7 @@ export const PhonePreview = () => {
                 </div>
 
                 <div className="relative z-10 w-full h-full flex flex-col items-center text-neutral-100 text-center p-6 pt-12">
-                    <div className="mb-4 size-24 rounded-full overflow-hidden">
+                    <div className="relative mb-6 size-28 overflow-hidden rounded-full border-4 border-neutral-100 shadow-md">
                         {user?.avatarUrl ? (
                             <Image
                                 src={user.avatarUrl}
@@ -43,11 +43,11 @@ export const PhonePreview = () => {
                     </div>
 
                     <div className="mb-2">
-                        <h2 className="text-xl font-semibold text-balance">{user?.name || 'Name'}</h2>
-                        <p className="text-base text-neutral-200">@{user?.username || 'username'}</p>
+                        <h2 className="text-3xl font-semibold text-balance">{user?.name || 'Name'}</h2>
+                        <p className="text-lg text-neutral-200 text-pretty">@{user?.username || 'username'}</p>
                     </div>
 
-                    <p className="max-w-full text-sm text-neutral-200 text-pretty line-clamp-2">
+                    <p className="max-w-full text-sm text-neutral-300 text-pretty line-clamp-2">
                         {user?.bio || 'No bio available'}
                     </p>
 

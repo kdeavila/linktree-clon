@@ -1,22 +1,12 @@
-import { Lock } from "lucide-react"
-import { ButtonsHeader } from "./button-header"
-import { ButtonCopyProfile } from "./button-copy-profile"
-import { PhonePreview } from "./phone-preview"
+import { PhonePreview } from "./phone-preview";
 
 export const ProfilePreview = () => {
+  return (
+    <div className="md:border-l border-neutral-300 p-6 flex flex-col items-center text-center">
+      <h3 className="text-2xl font-semibold text-neutral-900">Preview of your profile</h3>
+      <p className="text-sm text-neutral-600">This is how your profile will look.</p>
 
-    return (
-        <div className="border-l border-neutral-200 p-4">
-            <ButtonsHeader />
-
-            <ButtonCopyProfile />
-
-            <PhonePreview />
-
-            <div className="flex items-center justift-center mt-20 gap-2">
-                <span className="text-sm semibold">Hide kdeavila</span>
-                <Lock className="size-4" />
-            </div>
-        </div>
-    )
-}
+      <PhonePreview />
+    </div>
+  );
+};

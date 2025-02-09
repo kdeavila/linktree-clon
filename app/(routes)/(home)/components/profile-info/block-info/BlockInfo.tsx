@@ -14,8 +14,8 @@ export const BlockInfo = () => {
         <div className="flex items-center">
             <Dialog open={openDialog} onOpenChange={setOpenDialog}>
                 <DialogTrigger className="text-left" >
-                    <div className="flex flex-col gap-1">
-                        <span className="text-base font-semibold">@{user.username}</span>
+                    <div className="flex flex-col">
+                        <span className="text-lg font-semibold">{user.name}</span>
                         <span className="text-sm text-neutral-600">{user.bio ? "Edit bio" : "Add bio"}</span>
                     </div>
                 </DialogTrigger>

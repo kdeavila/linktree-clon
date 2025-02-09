@@ -7,10 +7,9 @@ import { useEffect, useState } from "react";
 import { LoaderProfile } from "@/components/shared";
 import { StepConfigUserProvider, UserProvider } from "@/contexts";
 import { ProfilePreview } from "./components/profile-preview";
-import { SidebarTrigger } from "@/components/ui/sidebar";
 import { ListSocialNetworks } from "./components/list-social-networks";
 
-export default function HomeLayout({ children }: { children: React.ReactNode }) {
+export default function HomePage() {
     const { user } = useUser();
     const [isFirstVisit, setIsFirstVisit] = useState(false);
     const [reload, setReload] = useState(false);
@@ -47,24 +46,19 @@ export default function HomeLayout({ children }: { children: React.ReactNode }) 
 
     return (
         <UserProvider>
-            <article className="grid grid-cols-1 md:grid-cols-[60%_auto] gap-4">
-                <div className="w-full flex flex-col p-4">
-                    <div className="flex items-center mb-2">
-                        <SidebarTrigger />
-                    </div>
-
+            <article className="grid grid-cols-1 md:grid-cols-[60%_auto] xl:grid-cols-[70%_auto]">
+                <div className="w-full flex flex-col p-6">
                     <LinkProfile />
-
                     <ProfileInfo onReload={setReload} />
 
                     {infoUser.Links.length > 0 ? (
                         <ListSocialNetworks links={infoUser.Links} onReload={setReload} />
                     ) : (
                         <div className="flex flex-col items-center mt-20">
-                            <div className="py-10 text-center flex flex-col items-center text-neutral-400 font-semibold">
-                                <TreePalm className="size-20" strokeWidth={1} />
-                                <p>Show the world who you are</p>
-                                <p>Add a link to get started.</p>
+                            <div className="py-10 text-center flex flex-col items-center">
+                                <TreePalm className="size-24 text-neutral-400" strokeWidth={1} />
+                                <h3 className="mt-2 text-lg font-semibold text-neutral-400">Show the world who you are</h3>
+                                <p className="text-sm text-neutral-400">Add a link to get started.</p>
                             </div>
                         </div>
                     )}
@@ -72,7 +66,6 @@ export default function HomeLayout({ children }: { children: React.ReactNode }) 
 
                 <ProfilePreview />
             </article>
-            {children}
         </UserProvider >
     );
 }

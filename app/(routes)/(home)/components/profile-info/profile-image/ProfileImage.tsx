@@ -25,8 +25,8 @@ export const ProfileImage = () => {
                 <div className="relative">
                     <Image src={user.avatarUrl || '/default-avatar.webp'} alt="Avatar" width={80} height={80} className="size-16 rounded-full aspect-square object-cover" />
 
-                    <div className="bg-neutral-100 rounded-full flex items-center justify-center size-7 absolute right-[-5px] bottom-[-10px] border border-neutral-200">
-                        <Pencil className="size-4 text-neutral-400" />
+                    <div className="bg-neutral-100 rounded-full flex items-center justify-center size-7 absolute right-[-5px] bottom-[-10px] border border-neutral-300">
+                        <Pencil className="size-4 text-neutral-600" />
                     </div>
                 </div>
             </DialogTrigger>

@@ -11,8 +11,8 @@ export const ListSocialNetworks = (props: ListSocialNetworksProps) => {
             {links.map((link) => {
                 return (
                     <div key={link.id}
-                        className="bg-neutral-50 rounded-md p-4 flex gap-4 items-center justify-between border border-neutral-300">
-                        <div className="flex gap-2 items-center">
+                        className="bg-neutral-50 rounded-md p-4 flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between border border-neutral-300">
+                        <div className="flex gap-2 lg:gap-3 items-center">
                             <Image
                                 src={link.icon || ""}
                                 alt="Icono de red social"
@@ -22,8 +22,8 @@ export const ListSocialNetworks = (props: ListSocialNetworksProps) => {
                             />
 
                             <div className="flex flex-col">
-                                <span className="font-semibold text-sm">{link.name}</span>
-                                <span className="font-semibold text-sm text-neutral-600">{link.link}</span>
+                                <span className="font-semibold text-sm line-clamp-1">{link.name}</span>
+                                <span className="text-sm text-neutral-600 line-clamp-1">{link.link}</span>
                             </div>
                         </div>
 
