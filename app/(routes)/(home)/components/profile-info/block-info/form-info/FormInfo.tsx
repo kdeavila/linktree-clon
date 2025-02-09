@@ -91,6 +91,7 @@ export const FormInfo = (props: FormInfoProps) => {
               <FormLabel>Bio</FormLabel>
               <FormControl>
                 <Textarea
+                  rows={4}
                   placeholder="Tell us a little bit about yourself"
                   className="resize-none"
                   {...field}

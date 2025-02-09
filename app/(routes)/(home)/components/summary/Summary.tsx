@@ -13,7 +13,6 @@ export const Summary = (props: SummaryProps) => {
     return (
         <div>
             <h2 className="text-2xl font-semibold text-neutral-950">Your profile has been created</h2>
-            <p>It&#39;s time to share to the world.</p>
 
             <div className="relative">
                 <div className="flex flex-row items-center my-6">
@@ -33,11 +32,11 @@ export const Summary = (props: SummaryProps) => {
                 </div>
 
                 <div>
-                    <div className="space-y-2 mt-4">
+                    <div className="space-y-3 mt-4">
                         {platforms.map(({ icon, name, link }) => (
-                            <div key={name} className="flex items-center gap-2 mt-2">
-                                <Image src={icon} alt={`${name} icon`} width={24} height={24} />
-                                <p>{name}: {link}</p>
+                            <div key={name} className="flex items-start gap-2 mt-2">
+                                <Image src={icon} alt={`${name} icon`} width={24} height={24} className="flex-shrink-0" />
+                                <p className="text-sm text-neutral-600 break-all line-clamp-1 text-left">{link}</p>
                             </div>
                         ))}
                     </div>

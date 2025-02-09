@@ -6,7 +6,7 @@ export const TabSelector = (props: TabSelectorProps) => {
 
     return (
         <>
-            <div className="flex gap-2 p-2 justify-between items-center hover:bg-neutral-200 transition-colors rounded-md cursor-pointer"
+            <div className="flex text-left gap-2 p-2 justify-between items-center hover:bg-neutral-200 transition-colors rounded-md cursor-pointer"
                 onClick={() => setShowTab("upload")}
             >
                 <div className="flex items-center gap-3">
@@ -24,7 +24,7 @@ export const TabSelector = (props: TabSelectorProps) => {
                 <ChevronRight className="size-6" />
             </div>
 
-            <div className="flex gap-2 p-2 justify-between items-center hover:bg-neutral-200 transition-colors rounded-md cursor-pointer"
+            <div className="flex text-left gap-2 p-2 justify-between items-center hover:bg-neutral-200 transition-colors rounded-md cursor-pointer"
                 onClick={() => setShowTab("delete")}
             >
                 <div className="flex items-center gap-3">

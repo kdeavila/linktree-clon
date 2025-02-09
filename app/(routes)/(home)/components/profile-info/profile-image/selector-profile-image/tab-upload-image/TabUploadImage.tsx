@@ -39,7 +39,7 @@ export const TabUploadImage = (props: TabUploadImageProps) => {
                         />
                     ) : (
                         <UploadButton
-                            className="custom-class rounded-md border text-neutral-950 hover:bg-neutral-100 transition-colors border-neutral-200 h-full w-full"
+                            className="rounded-md border text-neutral-950 hover:bg-neutral-100 transition-colors border-neutral-200 h-full w-full custom-class"
                             endpoint="profileImage"
                             onClientUploadComplete={(res) => {
                                 setPhotoUrl(res?.[0].url);

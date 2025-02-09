@@ -93,7 +93,7 @@ export const EditBackground = (props: EditBackgroundProps) => {
                             </div>
                         ) : (
                             <UploadButton
-                                className="flex flex-col items-center justify-center gap-1 custom-class rounded-md border text-neutral-950 hover:bg-neutral-100 transition-colors border-neutral-200 h-full w-full"
+                                className="flex flex-col items-center justify-center gap-1 rounded-md border text-neutral-950 hover:bg-neutral-100 transition-colors border-neutral-200 h-full w-full custom-class"
                                 endpoint="profileImage"
                                 onClientUploadComplete={(res) => {
                                     setPhotoUrl(res?.[0].url);

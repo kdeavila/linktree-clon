@@ -7,8 +7,8 @@ export const ListSocialNetwork = () => {
     if (!links?.length) return null;
 
     return (
-        <nav aria-label="Redes sociales" className="w-full max-w-4xl mx-auto mt-6">
-            <ul className="grid grid-cols-4 gap-2">
+        <nav aria-label="Social networks links" className="w-full mx-auto mt-6">
+            <ul className="grid grid-cols-3 gap-2 lg:grid-cols-4">
                 {links.map(({ id, icon, link }) => (
                     <li key={id} className="relative">
                         <a

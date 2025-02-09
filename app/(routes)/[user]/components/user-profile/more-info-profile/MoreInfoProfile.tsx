@@ -35,16 +35,16 @@ export const MoreInfoProfile = (props: MoreInfoProfileProps) => {
                     </DialogHeader>
 
                     <div className="gap-4 py-4">
-                            <div className="p-4 rounded-md bg-emerald-600 text-neutral-100 flex flex-col items-center justify-center">
-                            <Image 
-                                src={user.avatarUrl || "https://yu88eqe5p0.ufs.sh/f/Dk6Z3495qeoEFGWzdThdfcCSj8pVvGOEsAbzui56mWXk29r4"} 
-                                alt="User profile picture" 
-                                width={96} 
-                                height={96} 
-                                className="rounded-full aspect-square object-cover border-4 border-neutral-100" 
+                        <div className="p-8 rounded-md bg-neutral-950 text-neutral-100 flex flex-col items-center justify-center">
+                            <Image
+                                src={user.avatarUrl || "https://yu88eqe5p0.ufs.sh/f/Dk6Z3495qeoEFGWzdThdfcCSj8pVvGOEsAbzui56mWXk29r4"}
+                                alt="User profile picture"
+                                width={96}
+                                height={96}
+                                className="rounded-full aspect-square object-cover border-4 border-neutral-100"
                             />
                             <h2 className="mt-2 text-xl font-semibold">{user.name}</h2>
-                            <p className="text-base text-center text-neutral-300 line-clamp-3">{user.bio || "No bio available"}</p>
+                            <p className="text-base text-center text-neutral-300 line-clamp-3">{user.bio || "No bio yet"}</p>
                         </div>
 
                         <div className="mt-6">
@@ -52,22 +52,22 @@ export const MoreInfoProfile = (props: MoreInfoProfileProps) => {
                             <div className="flex gap-4 justify-center">
                                 {shareOptions.map((option, index) => (
                                     <a
-                                    key={index}
-                                    href={option.url}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    onClick={option.onClick}
-                                    className={`p-3 rounded-md border-2 cursor-pointer transition-colors
-                                        ${option.color === "blue-600" ? "border-blue-600 bg-blue-600 hover:bg-neutral-100 hover:text-blue-600" : ""}
-                                        ${option.color === "blue-400" ? "border-blue-400 bg-blue-400 hover:bg-neutral-100 hover:text-blue-400" : ""}
-                                        ${option.color === "blue-800" ? "border-blue-800 bg-blue-800 hover:bg-neutral-100 hover:text-blue-800" : ""}
-                                        ${option.color === "green-500" ? "border-green-500 bg-green-500 hover:bg-neutral-100 hover:text-green-500" : ""}
-                                        ${option.color === "gray-500" ? "border-gray-500 bg-gray-500 hover:bg-neutral-100 hover:text-gray-500" : ""}
-                                        text-neutral-100
-                                    `}
-                                >
-                                    {option.icon}
-                                </a>
+                                        key={index}
+                                        href={option.url}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        onClick={option.onClick}
+                                        className={`p-3 rounded-md border-2 cursor-pointer transition-colors
+                                         ${option.color === "blue-600" ? "border-blue-600 bg-blue-600 hover:bg-neutral-100 hover:text-blue-600" : ""}
+                                         ${option.color === "blue-400" ? "border-blue-400 bg-blue-400 hover:bg-neutral-100 hover:text-blue-400" : ""}
+                                         ${option.color === "blue-800" ? "border-blue-800 bg-blue-800 hover:bg-neutral-100 hover:text-blue-800" : ""}
+                                         ${option.color === "green-500" ? "border-green-500 bg-green-500 hover:bg-neutral-100 hover:text-green-500" : ""}
+                                         ${option.color === "gray-500" ? "border-gray-500 bg-gray-500 hover:bg-neutral-100 hover:text-gray-500" : ""}
+                                         text-neutral-100
+                                     `}
+                                    >
+                                        {option.icon}
+                                    </a>
                                 ))}
                             </div>
                         </div>

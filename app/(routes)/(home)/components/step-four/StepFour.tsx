@@ -27,7 +27,7 @@ export const StepFour = () => {
 
     const handleContinue = async () => {
 
-        if (!name || !username) {
+        if (!name || !username || !infoUser.avatarUrl) {
             alert('Please, fill all the fields and the image');
             return;
         }
@@ -82,7 +82,7 @@ export const StepFour = () => {
                             alt="profile image"
                             width={120}
                             height={120}
-                            className={`w-full h-full max-w-16 object-cover rounded-full border-2 ${selectedPhoto === photoUrl ? 'border-neutral-950' : 'border-transparent'}`}
+                            className={`w-full h-full aspect-square max-w-16 object-cover rounded-full border-2 ${selectedPhoto === photoUrl ? 'border-neutral-950' : 'border-transparent'}`}
                         />
 
                     </div>
@@ -90,7 +90,7 @@ export const StepFour = () => {
 
                 {showUploadPhoto ? (
                     <UploadButton
-                        className="max-w-16 size-16 text-[10px] rounded-full text-neutral-950 mt-4 border border-neutral-300 bg-neutral-100"
+                        className="max-w-16 size-16 text-[10px] rounded-full text-neutral-950 mt-4 border border-neutral-300 bg-neutral-100 custom-class"
                         endpoint="profileImage"
                         onClientUploadComplete={(res) => {
                             setPhotoUrl(res[0].url)

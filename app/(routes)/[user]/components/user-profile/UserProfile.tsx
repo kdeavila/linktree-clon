@@ -21,7 +21,7 @@ export const UserProfile = (props: UserProfileProps) => {
                 <div className="absolute w-full h-full bg-gradient-to-r from-blue-500 to-indigo-600 opacity-40"></div>
             )}
 
-            <div className="relative flex flex-col items-center gap-4 pt-16 w-full px-6 max-w-xl text-center z-10">
+            <div className="relative flex flex-col items-center gap-4 pt-8 w-full px-6 max-w-xl text-center z-10 md:pt-16">
                 <MoreInfoProfile user={user} />
 
                 <div className="relative size-28 overflow-hidden rounded-full border-4 border-neutral-100 shadow-md">

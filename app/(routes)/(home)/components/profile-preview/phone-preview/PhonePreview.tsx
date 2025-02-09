@@ -21,39 +21,27 @@ export const PhonePreview = () => {
                     )}
                 </div>
 
-                <div className="relative z-10 w-full h-full flex flex-col items-center text-neutral-100 text-center p-6 pt-12">
-                    <div className="relative mb-6 size-28 overflow-hidden rounded-full border-4 border-neutral-100 shadow-md">
-                        {user?.avatarUrl ? (
-                            <Image
-                                src={user.avatarUrl}
-                                alt="User Avatar"
-                                width={100}
-                                height={100}
-                                className="object-cover w-full h-full"
-                            />
-                        ) : (
-                            <Image
-                                src="https://yu88eqe5p0.ufs.sh/f/Dk6Z3495qeoEFGWzdThdfcCSj8pVvGOEsAbzui56mWXk29r4"
-                                alt="User Avatar"
-                                width={100}
-                                height={100}
-                                className="object-cover w-full h-full"
-                            />
-                        )}
+                <div className="relative z-10 w-full h-full flex flex-col items-center text-neutral-100 text-center p-6 pt-12 phone">
+                    <div className="relative size-28 overflow-hidden rounded-full border-4 border-neutral-100 shadow-md shrink-0">
+                        <Image
+                            src={user?.avatarUrl || "https://yu88eqe5p0.ufs.sh/f/Dk6Z3495qeoEFGWzdThdfcCSj8pVvGOEsAbzui56mWXk29r4"}
+                            alt="User Avatar"
+                            width={100}
+                            height={100}
+                            className="object-cover w-full h-full"
+                        />
                     </div>
 
-                    <div className="mb-2">
+                    <div className="mt-4 mb-2">
                         <h2 className="text-3xl font-semibold text-balance">{user?.name || 'Name'}</h2>
-                        <p className="text-lg text-neutral-200 text-pretty">@{user?.username || 'username'}</p>
+                        <p className="text-lg text-neutral-200">@{user?.username || 'username'}</p>
                     </div>
 
-                    <p className="max-w-full text-sm text-neutral-300 text-pretty line-clamp-2">
-                        {user?.bio || 'No bio available'}
+                    <p className="max-w-full text-sm text-neutral-300 text-balance line-clamp-3 shrink-0">
+                        {user?.bio || 'No bio yet'}
                     </p>
 
-                    <div className="w-full">
-                        <ListSocialNetwork />
-                    </div>
+                    <ListSocialNetwork />
                 </div>
 
 

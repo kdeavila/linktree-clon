@@ -23,7 +23,7 @@ export const ListSocialNetworks = (props: ListSocialNetworksProps) => {
 
                             <div className="flex flex-col">
                                 <span className="font-semibold text-sm line-clamp-1">{link.name}</span>
-                                <span className="text-sm text-neutral-600 line-clamp-1">{link.link}</span>
+                                <span className="text-sm text-neutral-600 break-all line-clamp-1">{link.link}</span>
                             </div>
                         </div>
 
