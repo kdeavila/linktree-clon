@@ -2,15 +2,13 @@ import { db } from "@/lib/db";
 import { NextRequest, NextResponse } from "next/server";
 
 type Props = {
-    params: {
+    params: Promise<{
         id: string;
-    };
+    }>;
 };
 
-export async function PATCH(
-    request: NextRequest,
-    { params }: Props
-) {
+export async function PATCH(request: NextRequest, props: Props) {
+    const params = await props.params;
     try {
         const { id } = params;
         const { link } = await request.json();
@@ -38,10 +36,8 @@ export async function PATCH(
     }
 }
 
-export async function DELETE(
-    request: NextRequest,
-    { params }: Props
-) {
+export async function DELETE(request: NextRequest, props: Props) {
+    const params = await props.params;
     try {
         const { id } = params;
 
