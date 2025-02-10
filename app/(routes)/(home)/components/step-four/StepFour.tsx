@@ -107,7 +107,6 @@ export const StepFour = () => {
                 )}
             </div>
 
-
             <div className="mt-6">
                 <p className="textt-sm text-neutral-600 mb-2">Complete the fields:</p>
                 <div className="grid gap-3">
@@ -136,7 +135,7 @@ export const StepFour = () => {
                         Back
                     </Button>
                 )}
-                <Button onClick={handleContinue} className="w-full">Continue</Button>
+                <Button onClick={handleContinue} disabled={name.length < 3 || username.length < 3 || infoUser.avatarUrl === ''} className="w-full">Continue</Button>
             </div>
         </div>
     )

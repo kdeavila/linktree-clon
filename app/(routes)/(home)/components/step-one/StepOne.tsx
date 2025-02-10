@@ -35,7 +35,7 @@ export const StepOne = () => {
         </div>
 
         <div className="mt-4">
-            <Button onClick={nextStep} className="w-full">Continue</Button>
+            <Button onClick={nextStep} disabled={!selectedValue} className="w-full">Continue</Button>
         </div>
     </div >
 }

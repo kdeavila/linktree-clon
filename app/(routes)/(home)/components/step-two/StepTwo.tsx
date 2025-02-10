@@ -58,7 +58,7 @@ export const StepTwo = () => {
                         Back
                     </Button>
                 )}
-                <Button onClick={handleContinue} className="w-full">Continue</Button>
+                <Button onClick={handleContinue} disabled={selectedPlatforms.length === 0} className="w-full">Continue</Button>
             </div>
         </div>
     )

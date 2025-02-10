@@ -42,15 +42,6 @@ export const Summary = (props: SummaryProps) => {
                     </div>
 
                     <div className="mt-4 flex flex-col gap-3 text-neutral-950">
-                        {step > 1 && step <= 5 && (
-                            <Button
-                                variant="outline"
-                                className="w-full"
-                                onClick={prevStep}>
-                                <ArrowLeft />
-                                Back
-                            </Button>
-                        )}
                         <Button onClick={onReload} className="w-full">Finish</Button>
                     </div>
                 </div>
