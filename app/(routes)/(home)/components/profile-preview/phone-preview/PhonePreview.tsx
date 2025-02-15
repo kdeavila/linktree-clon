@@ -6,8 +6,8 @@ export const PhonePreview = () => {
     const { user } = useUserInfo();
 
     return (
-        <div className="mt-4 mx-auto">
-            <div className="relative rounded-[40px] w-full max-w-[364px] aspect-[9/16] border-[10px] border-neutral-950 bg-neutral-950 overflow-hidden shadow-2xl">
+        <div className="mt-4 mx-auto w-full">
+            <div className="relative rounded-[40px] w-full max-w-[364px] aspect-[9/16] border-[10px] border-neutral-950 bg-neutral-950 overflow-hidden shadow-2xl mx-auto">
                 <div className="absolute inset-0">
                     {user?.backgroundImage ? (
                         <Image
@@ -33,7 +33,7 @@ export const PhonePreview = () => {
                     </div>
 
                     <div className="mt-4 mb-2">
-                        <h2 className="text-3xl font-semibold text-balance">{user?.name || 'Name'}</h2>
+                        <h2 className="text-3xl font-semibold text-balance">{user?.name || 'Name profile'}</h2>
                         <p className="text-lg text-neutral-200">@{user?.username || 'username'}</p>
                     </div>
 
