@@ -13,7 +13,7 @@ export const LinkProfile = () => {
     if (!user) return null;
 
     const copyToClipboard = () => {
-        const url = `${window.location.origin}/linktree`;
+        const url = `${window.location.origin}/${user.username}`;
         navigator.clipboard.writeText(url);
         setIsCopied(true);
 
