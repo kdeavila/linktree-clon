@@ -1,13 +1,12 @@
 "use client"
-import { TreePalm } from "lucide-react";
 import { HandlerSteps, LinkProfile, ProfileInfo } from "./components";
 import { useUser } from "@clerk/nextjs";
 import { Link, User } from "@prisma/client";
 import { useEffect, useState } from "react";
-import { LoaderProfile } from "@/components/shared";
 import { StepConfigUserProvider, UserProvider } from "@/contexts";
 import { ProfilePreview } from "./components/profile-preview";
 import { ListSocialNetworks } from "./components/list-social-networks";
+import { SkeletonProfile } from "./components/skeleton-profile";
 
 export default function HomePage() {
     const { user } = useUser();
@@ -33,7 +32,7 @@ export default function HomePage() {
 
 
     if (!user || !infoUser) {
-        return <LoaderProfile />
+        return <SkeletonProfile />
     }
 
     if (isFirstVisit) {
@@ -51,17 +50,7 @@ export default function HomePage() {
                     <LinkProfile />
                     <ProfileInfo onReload={setReload} />
 
-                    {infoUser.Links.length > 0 ? (
-                        <ListSocialNetworks links={infoUser.Links} onReload={setReload} />
-                    ) : (
-                        <div className="flex flex-col items-center mt-20">
-                            <div className="py-10 text-center flex flex-col items-center">
-                                <TreePalm className="size-24 text-neutral-400" strokeWidth={1} />
-                                <h3 className="mt-2 text-lg font-semibold text-neutral-400">Show the world who you are</h3>
-                                <p className="text-sm text-neutral-400">Add a link to get started.</p>
-                            </div>
-                        </div>
-                    )}
+                    <ListSocialNetworks links={infoUser.Links} onReload={setReload} />
                 </div>
 
                 <ProfilePreview />

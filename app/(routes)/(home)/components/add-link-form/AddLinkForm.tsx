@@ -49,6 +49,7 @@ export const AddLinkForm = (props: AddLinkFormProps) => {
             reloadUser();
             onReload(true);
             setOpen(false);
+            form.reset();
 
         } catch (error) {
             console.error(error);
@@ -65,7 +66,13 @@ export const AddLinkForm = (props: AddLinkFormProps) => {
     })
 
     return (
-        <Dialog open={open} onOpenChange={setOpen}>
+        <Dialog open={open} onOpenChange={(open) => {
+            setOpen(open)
+
+            if (!open) {
+                form.reset();
+            }
+        }}>
             <DialogTrigger asChild className="order-2 md:order-1">
                 <Button >
                     <Plus />
