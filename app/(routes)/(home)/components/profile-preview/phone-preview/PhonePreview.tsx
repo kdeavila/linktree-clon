@@ -17,7 +17,7 @@ export const PhonePreview = () => {
                             className="object-cover opacity-40"
                         />
                     ) : (
-                        <div className="w-full h-full bg-neutral-600 opacity-70"></div>
+                        <div className="w-full h-full bg-gradient-to-r from-blue-500 to-indigo-600 opacity-40"></div>
                     )}
                 </div>
 
