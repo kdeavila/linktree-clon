@@ -2,12 +2,11 @@ import { useStepConfig } from "@/hooks/use-step-config";
 import { SummaryProps } from "./Summary.types"
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
-import { ArrowLeft } from "lucide-react";
 import { Confetti } from "@/components/shared";
 
 export const Summary = (props: SummaryProps) => {
     const { onReload } = props;
-    const { infoUser, step, prevStep } = useStepConfig();
+    const { infoUser } = useStepConfig();
     const { avatarUrl, name, username, typeUser, platforms } = infoUser;
 
     return (
