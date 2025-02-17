@@ -32,12 +32,16 @@ export const PhonePreview = () => {
                         />
                     </div>
 
-                    <div className="mt-4 mb-2">
-                        <h2 className="text-3xl font-semibold text-balance">{user?.name || 'Name profile'}</h2>
-                        <p className="text-lg text-neutral-200">@{user?.username || 'username'}</p>
+                    <div className="mt-2 mb-2">
+                        <h2 className="text-2xl max-w-full font-semibold text-balance text-slate-50/90 md:text-3xl">{user?.name || 'Name profile'}</h2>
+                        <div className="flex flex-row gap-2 items-center justify-center">
+                            <p className="text-lg text-red-100/90">@{user?.username || 'username'}</p>
+                            <span>-</span>
+                            <p className="text-lg text-yellow-100/90">{user?.typeUser || 'position'}</p>
+                        </div>
                     </div>
 
-                    <p className="max-w-full text-sm text-neutral-300 text-balance line-clamp-3 shrink-0">
+                    <p className="text-sm text-neutral-400 text-pretty line-clamp-3 shrink-0">
                         {user?.bio || null}
                     </p>
 

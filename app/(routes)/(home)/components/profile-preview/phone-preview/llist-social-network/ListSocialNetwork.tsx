@@ -15,7 +15,7 @@ export const ListSocialNetwork = () => {
                             href={link || "#"}
                             target="_blank"
                             rel="noreferrer"
-                            className="flex justify-center items-center p-3 rounded-md cursor-pointer border border-transparent group-hover:border-cyan-100 bg-neutral-100/5 backdrop-blur-sm group-hover:bg-neutral-200/20 transition-colors"
+                            className="flex justify-center items-center p-3 rounded-md cursor-pointer border border-transparent group-hover:border-cyan-100 bg-neutral-100/5 backdrop-blur-sm group-hover:bg-neutral-200/20 transition-colors md:p-2 lg:p-3"
                             aria-label="Visitar red social"
                         >
                             {icon && (
