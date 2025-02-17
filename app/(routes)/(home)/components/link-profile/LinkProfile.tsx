@@ -1,5 +1,6 @@
 "use client"
 
+import { PixelCanvas } from "@/components/shared/pixel-canvas";
 import { Button } from "@/components/ui/button";
 import { toast } from "@/hooks/use-toast";
 import { useUserInfo } from "@/hooks/use-user";
@@ -27,17 +28,21 @@ export const LinkProfile = () => {
         toast({
             title: "✅ Link copied to clipboard!",
         })
-        setTimeout(() => setIsCopied(false), 4000);
+        setTimeout(() => setIsCopied(false), 1000);
     };
 
     return (
-        <div className="flex flex-col p-4 rounded-md border border-neutral-300 sm:flex-row sm:justify-between sm:items-center">
-            <div className="flex flex-col text-left mb-2 md:mb-0 lg:flex-row lg:items-center lg:gap-1">
+        <div className="relative flex flex-col p-4 rounded-md border border-neutral-300 sm:flex-row sm:justify-between sm:items-center hover:border-neutral-400 transition-colors">
+            <div className="w-max relative z-10 flex flex-col text-left mb-2 md:mb-0 lg:flex-row lg:items-center lg:gap-1">
                 <span className="font-semibold">Your LinkTree is live:</span>
                 <p className="text-sm">{window.location.origin}/{user.username}</p>
             </div>
 
-            <Button className="w-full sm:w-auto" onClick={copyToClipboard}>{isCopied ? "Copied! 🎉" : "Copy LinkTree URL"}</Button>
+            <Button className="relative w-full z-10 sm:w-auto" onClick={copyToClipboard}>{isCopied ? "Copied! 🎉" : "Copy LinkTree URL"}</Button>
+
+            <div className="absolute inset-0 z-0" >
+                <PixelCanvas />
+            </div>
         </div>
     );
 };
