@@ -8,14 +8,20 @@ import { useStepConfig } from "@/hooks/use-step-config";
 import { UploadButton } from "@/lib/uploadthing";
 import axios from "axios";
 import { toast } from "@/hooks/use-toast";
+import { useUser } from '@clerk/clerk-react'
 
 export const StepFour = () => {
+    const { user } = useUser();
     const { setInfoUser, infoUser, nextStep, step, prevStep } = useStepConfig()
     const [name, setName] = useState('');
     const [username, setUsername] = useState('');
     const [photoUrl, setPhotoUrl] = useState('');
     const [showUploadPhoto, setShowUploadPhoto] = useState(false);
     const [selectedPhoto, setSelectedPhoto] = useState('');
+
+    if (!user) {
+        return null;
+    }
 
     const handleImageSelect = (src: string) => {
         setSelectedPhoto(src);
@@ -26,7 +32,6 @@ export const StepFour = () => {
     }
 
     const handleContinue = async () => {
-
         if (!name || !username || !infoUser.avatarUrl) {
             alert('Please, fill all the fields and the image');
             return;
@@ -35,13 +40,14 @@ export const StepFour = () => {
         setInfoUser((prevInfoUser) => ({
             ...prevInfoUser,
             name,
-            username
+            username: username.toLowerCase()
         }))
 
         try {
             const response = await axios.post('/api/user', {
                 name,
-                username,
+                username: username.toLowerCase(),
+                email: user.primaryEmailAddress?.emailAddress,
                 avatarUrl: infoUser.avatarUrl,
                 links: infoUser.platforms,
                 typeUser: infoUser.typeUser
