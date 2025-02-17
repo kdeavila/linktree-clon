@@ -16,7 +16,7 @@ export const BlockInfo = () => {
                 <DialogTrigger className="text-left" >
                     <div className="flex flex-col">
                         <span className="text-lg font-semibold">{user.name}</span>
-                        <span className="text-sm text-neutral-600">{user.bio ? "Edit bio" : "Add bio"}</span>
+                        <span className="text-sm text-neutral-600">Edit profile</span>
                     </div>
                 </DialogTrigger>
 

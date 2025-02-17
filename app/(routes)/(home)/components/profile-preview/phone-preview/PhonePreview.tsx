@@ -38,7 +38,7 @@ export const PhonePreview = () => {
                     </div>
 
                     <p className="max-w-full text-sm text-neutral-300 text-balance line-clamp-3 shrink-0">
-                        {user?.bio || 'No bio yet'}
+                        {user?.bio || null}
                     </p>
 
                     <ListSocialNetwork />

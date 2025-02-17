@@ -6,7 +6,7 @@ export async function POST(req: NextRequest) {
     try {
         const { userId } = getAuth(req);
         const data = await req.json();
-        const { name, username, avatarUrl, links, typeUser } = data;
+        const { name, username, email, avatarUrl, links, typeUser } = data;
 
         if (!userId) {
             return new NextResponse("Unauthorized", { status: 401 });
@@ -17,6 +17,7 @@ export async function POST(req: NextRequest) {
             data: {
                 name,
                 username,
+                email,
                 avatarUrl,
                 firstLogin: false,
                 typeUser,
