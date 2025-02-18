@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { UserProfileProps } from "./UserProfile.types";
 import { MoreInfoProfile } from "./more-info-profile";
+import { ExternalLink } from "lucide-react";
 
 export const UserProfile = (props: UserProfileProps) => {
     const { user } = props;
@@ -21,7 +22,7 @@ export const UserProfile = (props: UserProfileProps) => {
                 <div className="absolute w-full h-full bg-gradient-to-r from-blue-500 to-indigo-600 opacity-40"></div>
             )}
 
-            <div className="relative flex flex-col items-center gap-4 pt-8 w-full px-6 max-w-xl text-center z-10 md:pt-16">
+            <div className="relative flex flex-col items-center gap-4 py-8 w-full px-6 max-w-xl text-center z-10 md:py-16">
                 <MoreInfoProfile user={user} />
 
                 <div className="relative size-28 overflow-hidden rounded-full border-4 border-neutral-100 shadow-md">
@@ -41,20 +42,23 @@ export const UserProfile = (props: UserProfileProps) => {
                 </div>
 
                 {user?.Links.length > 0 ? (
-                    <div className="w-full grid grid-cols-1 gap-4 mt-4 mb-12">
+                    <ul className="w-full grid grid-cols-1 gap-4 mt-4">
                         {user.Links.map((link) => (
-                            <a
-                                key={link.id}
-                                href={link.link || "#"}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="bg-neutral-200/50 rounded-md p-4 flex gap-4 text-left items-center border border-neutral-400 shadow group hover:shadow-md transition-shadow"
-                            >
-                                <Image src={link.icon || ""} alt={link.name || "Social Icon"} height={40} width={40} className="size-10" />
-                                <span className="text-sm font-medium line-clamp-1 text-neutral-950 group-hover:text-blue-700 transition-colors">{link.name}</span>
-                            </a>
+                            <li key={link.id} className="relative group">
+                                <a
+                                    href={link.link || "#"}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="flex gap-4 justify-between items-center p-3 rounded-md cursor-pointer border border-transparent group-hover:border-cyan-100/50 bg-neutral-100/5 backdrop-blur-sm group-hover:bg-neutral-200/20 transition-colors md:p-2 lg:p-3"
+                                >
+                                    <Image src={link.icon || ""} alt={link.name || "Social Icon"} height={40} width={40} className="size-8" />
+                                    <span className="text-sm font-medium line-clamp-1 text-neutral-100/80 group-hover:text-neutral-100 transition-colors">{link.name}</span>
+                                    <ExternalLink className="size-4" stroke="#f5f5f5" />
+                                </a>
+                                <div className="absolute top-0 right-0 size-3 rounded-full translate-x-1/2 -translate-y-1/2 bg-cyan-100/50 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                            </li>
                         ))}
-                    </div>
+                    </ul>
                 ) : (
                     <p className="mt-6 text-gray-500">There are no links available yet</p>
                 )}
