@@ -1,10 +1,10 @@
 "use client"
 
-import { LoaderProfile } from "@/components/shared";
 import { Link, User } from "@prisma/client";
 import { useParams, useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import { UserNotFound, UserProfile } from "./components";
+import { SkeletonUser } from "./components/skeleton-user";
 
 export default function UserPage() {
     const params = useParams();
@@ -46,8 +46,9 @@ export default function UserPage() {
         }
     }, [username, reload, router]);
 
+    
     if (isLoading) {
-        return <LoaderProfile />
+        return <SkeletonUser />
     }
 
     if (!infoUser) {
