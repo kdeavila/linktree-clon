@@ -1,36 +1,60 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-## Getting Started
+# Linktree Clone 🌐
 
-First, run the development server:
+¡Bienvenido a **Linktree Clone**! Este proyecto es una réplica funcional de Linktree, diseñada para que los usuarios puedan crear un perfil personalizado y compartir múltiples enlaces en un solo lugar. Desarrollado con tecnologías modernas, este clon es rápido, escalable y fácil de personalizar.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+![Captura del Proyecto](https://i.postimg.cc/J77vZqv8/captura-linktree-clone.png)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Características Principales ✨
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- **Perfiles Personalizables**: Crea y gestiona enlaces de manera sencilla.
+- **Diseño Responsive**: Funciona perfectamente en dispositivos móviles, tablets y desktops.
+- **Tecnologías Modernas**: Construido con las mejores herramientas del ecosistema web.
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## Tecnologías Usadas 🛠️
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- **Next.js**: Framework de React para aplicaciones web rápidas y optimizadas.
+- **React**: Biblioteca de JavaScript para construir interfaces de usuario.
+- **Prisma**: ORM moderno para gestionar bases de datos de manera eficiente.
+- **Tailwind CSS**: Framework CSS para diseñar interfaces de manera rápida y flexible.
+- **Clerk**: Autenticación y gestión de usuarios de forma segura y sencilla.
+- **NeonDB**: Base de datos serverless basada en PostgreSQL para escalabilidad.
+- **Uploadthing**: Herramienta para gestionar la subida de archivos de manera eficiente.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+## Cómo Empezar 🚀
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+1. **Clona el Repositorio**:
+   ```bash
+   git clone https://github.com/kdeavila/linktree-clone.git
+   cd linktree-clone
+   ```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+2. **Instala Dependencias**:
+   ```bash
+   npm install
+   ```
+
+3. **Inicia el Servidor de Desarrollo**:
+   ```bash
+   npm run dev
+   ```
+
+4. **Abre el Proyecto**:
+   Visita `http://localhost:3000` en tu navegador.
+
+---
+
+## Contribuciones 🤝
+
+¡Las contribuciones son bienvenidas! Si tienes ideas, sugerencias o mejoras, no dudes en abrir un issue o enviar un pull request.
+
+---
+
+¡Esperamos que disfrutes usando y personalizando este **Linktree Clone**! 
+Made with ❤ kdeavila
